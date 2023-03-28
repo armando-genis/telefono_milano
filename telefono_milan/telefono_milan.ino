@@ -20,7 +20,7 @@ volatile bool triggered = false; // Variable booleana que indica si se ha activa
 
 // ================== DECLARACION PARA EL TIMER. =================
 // Definir el tiempo en milisegundos para el temporizador de un minuto
-const unsigned long minute = 40000;
+const unsigned long minute = 60000;
 // Variable que almacenará el tiempo en el que se realizó la última acción
 unsigned long lastActionTime;
 // ================== DF MINE PLAYER. =================
@@ -116,10 +116,10 @@ void stateOne(){
   Serial.println("estado uno");
   myDFPlayer.loop(1);
   delay(8000);
+  myDFPlayer.pause();
   if(triggered == 0){
     currentState = nullState;
   }
-  
 }
 
 void stateTwo(){
