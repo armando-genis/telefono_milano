@@ -21,7 +21,7 @@ const int BUTTON_1_PIN = 5;
 const int BUTTON_2_PIN = 7;
 
 // Definir el tiempo de espera antes de la acción de fallback (en milisegundos)
-const unsigned long TIMEOUT = 61000;
+const unsigned long TIMEOUT = 122000;
 
 // Definir las variables para el estado anterior del botón y el tiempo de la última pulsación
 bool lastButtonState_1 = LOW;
@@ -31,7 +31,7 @@ int lastButton = 0;
 
 // ================== DECLARACION PARA EL TIMER. =================
 // Definir el tiempo en milisegundos para el temporizador de un minuto
-const unsigned long minute = 60000;
+const unsigned long minute = 120000;
 // Variable que almacenará el tiempo en el que se realizó la última acción
 unsigned long lastActionTime;
 // ================== DF MINE PLAYER. =================
