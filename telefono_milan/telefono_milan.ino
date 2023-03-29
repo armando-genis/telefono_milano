@@ -27,7 +27,7 @@ const unsigned long TIMEOUT = 122000;
 bool lastButtonState_1 = LOW;
 bool lastButtonState_2 = LOW;
 unsigned long lastButtonPressTime = 0;
-int lastButton = 0;
+int lastButton = 3;
 
 // ================== DECLARACION PARA EL TIMER. =================
 // Definir el tiempo en milisegundos para el temporizador de un minuto
@@ -88,11 +88,6 @@ void interruptFunction() {
   }
   valorAnterior = valorActual;
 }
-
-
-
-
-
 
 void controlState(){
 
