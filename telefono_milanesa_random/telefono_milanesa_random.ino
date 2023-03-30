@@ -31,7 +31,7 @@ int lastButton = 3;
 
 // ================== DECLARACION PARA EL TIMER. =================
 // Definir el tiempo en milisegundos para el temporizador de un minuto
-const unsigned long minute = 120000;
+const unsigned long minute = 60000;
 // Variable que almacenará el tiempo en el que se realizó la última acción
 unsigned long lastActionTime;
 // ================== DF MINE PLAYER. =================
@@ -101,30 +101,6 @@ void controlState(){
     currentState = state2;
   }
 
-  // Leer el estado actual de los botones
-  bool buttonState_1 = digitalRead(BUTTON_1_PIN);
-  bool buttonState_2 = digitalRead(BUTTON_2_PIN);
-
-  // Verificar si alguno de los botones se ha presionado
-  if (buttonState_1 != lastButtonState_1 || buttonState_2 != lastButtonState_2) {
-    // Actualizar el tiempo de la última pulsación de botón
-    lastButtonPressTime = millis();
-
-    // Verificar qué botón se ha presionado
-    if (buttonState_1 == LOW) {
-      // Realizar la acción para el botón 1
-      lastButton = 1;
-
-    } else if (buttonState_2 == LOW){
-      // Realizar la acción para el botón 2
-      lastButton = 2;
-    }
-    // Actualizar el estado anterior del botón
-    lastButtonState_1 = buttonState_1;
-    lastButtonState_2 = buttonState_2;
-  } else {
-  }
-
 }
 
 void States(){
@@ -156,6 +132,7 @@ void stateOne(){
 }
 
 void stateTwo(){
+  lastButton = random(0, 4);
   Serial.println("estado dos");
   int randomNumber = random(1, 5);
   if(lastButton == 1){
